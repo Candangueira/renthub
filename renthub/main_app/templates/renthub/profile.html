@@ -1,0 +1,17 @@
+{% extends 'renthub/base.html' %}
+
+{% block content %}
+
+<div class="'profile">
+
+    <h1>Profile</h1>
+
+    <tr>
+        <td> { % user.name % }</td>
+        <td> { % user.avatar % }</td>
+        <td> { % user.address % }</td>
+    </tr>
+
+</div>
+
+{% endblock %}

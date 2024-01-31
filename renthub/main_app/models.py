@@ -8,7 +8,7 @@ from django.contrib.auth.models import AbstractUser
 
 
 RATINGS = (
-    ('5', 'Execellent'),
+    ('5', 'Excellent'),
     ('4', 'Very good'),
     ('3', 'Ok'),
     ('2', 'Bad'),
@@ -17,7 +17,7 @@ RATINGS = (
 
 
 # User Model
-class User(AbstractUser):
+class User(models.Model):
     name = models.CharField(max_length=50)
     avatar = models.URLField(max_length=200)
     address = models.CharField(
@@ -26,11 +26,11 @@ class User(AbstractUser):
     town = models.CharField(
         verbose_name='Town/City',max_length=150, null=True, blank=False
         )
-    county = models.CharField(
+    country = models.CharField(
         verbose_name='County',max_length=150, null=True, blank=False
         )
-    post_code = models.CharField(
-        verbose_name='Post Code',max_length=150, null=True, blank=False
+    zipcode = models.CharField(
+        verbose_name='Zip Code',max_length=150, null=True, blank=False
         )
     country = models.CharField(
         verbose_name='Country',max_length=150, null=True, blank=False
@@ -40,7 +40,7 @@ class User(AbstractUser):
     #
 
     def __str__(self):
-        return self.user
+        return self.name
 
 # Category Model
 class Category(models.Model):
